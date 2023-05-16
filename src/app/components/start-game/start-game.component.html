@@ -1,0 +1,38 @@
+<div class="container-top">
+  <div class="container">
+
+    <h2> Registro de Jugadores </h2>
+
+    <form [formGroup]="myForm" (ngSubmit)="submitInfoPlayers()">
+      <div class="form-group">
+        <mat-radio-group (change)="onItemChange($event)">
+          <mat-form-field appearance="outline">
+          <mat-label>Jugador 1</mat-label>
+          <input matInput placeholder="Ex. Maria" formControlName="player1">
+        </mat-form-field>
+        <mat-radio-button value="1">Reparte las cartas (Banca)</mat-radio-button>
+        <br>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Jugador 2</mat-label>
+          <input matInput placeholder="Ex. Pedro" formControlName="player2">
+        </mat-form-field>
+        <mat-radio-button value="2">Reparte las cartas (Banca)</mat-radio-button>
+        <br>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Jugador 3</mat-label>
+          <input matInput placeholder="Ex. Paco" formControlName="player3">
+        </mat-form-field>
+        <mat-radio-button value="3">Reparte las cartas (Banca)</mat-radio-button>
+        </mat-radio-group>
+        <br>
+
+        <button mat-raised-button color="primary"> Hecho </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
