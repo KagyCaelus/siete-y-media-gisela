@@ -1,1 +1,23 @@
-<p>game works!</p>
+
+<div class="container">
+  <div *ngFor="let card of actualGettedCards">
+      <img [src]="card.img" alt="card.img" class="img-fluid">
+  </div>
+</div>
+
+<!-------------------->
+
+<!--A partir de aquí pueden aparecer distintos componentes según el estado del juego:-->
+<!--Durante los turnos:-->
+
+  <div class="container">
+      <button mat-raised-button color="accent" (click)="SiguienteTurno()" [disabled]="players[0].finishedTurn && players[1].finishedTurn && players[2].finishedTurn">Siguiente</button>
+      <button mat-raised-button color="primary" (click)="getCard()" [disabled]="points > 7.5 || players[0].finishedTurn && players[1].finishedTurn && players[2].finishedTurn">Pedir carta</button>
+  </div>
+
+<!--Al acabar los turnos:-->
+
+<div class="container">
+  <button mat-raised-button color="warn" *ngIf="players[0].finishedTurn && players[1].finishedTurn && players[2].finishedTurn" (click)="results()">Ver resultados</button>
+</div>
+
